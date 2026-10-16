@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hangman</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <h1>Hangman</h1>
+      <dl class="stats" aria-label="Score">
+        <div><dt>Wins</dt><dd id="stat-wins">0</dd></div>
+        <div><dt>Losses</dt><dd id="stat-losses">0</dd></div>
+        <div><dt>Streak</dt><dd id="stat-streak">0</dd></div>
+        <div><dt>Best</dt><dd id="stat-best">0</dd></div>
+      </dl>
+    </header>
+
+    <section class="controls" aria-label="Game settings">
+      <label class="field">
+        <span>Category</span>
+        <select id="category">
+          <option value="random">Random</option>
+        </select>
+      </label>
+      <fieldset class="field" id="difficulty">
+        <legend>Difficulty</legend>
+        <div class="segmented" id="difficulty-options"></div>
+      </fieldset>
+      <button type="button" id="new-game" class="btn">New game</button>
+    </section>
+
+    <main class="board">
+      <!-- The hangman drawing. The gallows is always shown, and the
+           body parts (data-part) appear one by one as wrong guesses add up. -->
+      <svg class="figure" viewBox="0 0 200 240" role="img" aria-labelledby="figure-label">
+        <title id="figure-label">Hangman drawing</title>
+        <path class="gallows" d="M20 230 H150 M50 230 V20 H130 V45" />
+        <circle data-part pathLength="1" cx="130" cy="65" r="20" />
+        <path data-part pathLength="1" d="M130 85 V150" />
+        <path data-part pathLength="1" d="M130 100 L102 132" />
+        <path data-part pathLength="1" d="M130 100 L158 132" />
+        <path data-part pathLength="1" d="M130 150 L106 196" />
+        <path data-part pathLength="1" d="M130 150 L154 196" />
+        <path data-part pathLength="1" class="face" d="M119 57 l6 6 M125 57 l-6 6 M135 57 l6 6 M141 57 l-6 6" />
+        <path data-part pathLength="1" class="face" d="M122 77 q8 -6 16 0" />
+      </svg>
+
+      <div class="play">
+        <p class="hint">
+          <span class="chip" id="category-label">&nbsp;</span>
+          <span class="chip muted" id="difficulty-label">&nbsp;</span>
+        </p>
+        <div id="word" class="word" aria-live="polite"></div>
+        <p class="wrong-row">Wrong: <span id="wrong-letters" class="wrong-letters">–</span></p>
+        <p id="message" class="message" aria-live="polite"></p>
+        <button type="button" id="play-again" class="btn" hidden>Play again</button>
+      </div>
+    </main>
+
+    <div id="keyboard" class="keyboard" aria-label="Letters"></div>
+    <p class="tip">Tip: type letters on your keyboard. Press <kbd>Enter</kbd> to play again.</p>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
