@@ -7,7 +7,7 @@ reaches the browser until the game is over: no peeking in DevTools.
 
 ## Features
 
-- **4 categories:** Animals, Countries, Fruits and Sports (or Random). The category is shown as a hint.
+- **5 categories:** Animals, Countries, Fruits, Sports and Movies (or Random). The category is shown as a hint.
 - **3 difficulty levels**
 
   | Difficulty | Word length | Wrong guesses allowed |
