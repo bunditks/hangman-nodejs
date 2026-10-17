@@ -33,4 +33,13 @@ export const CATEGORIES = {
       'badminton', 'wrestling', 'basketball', 'volleyball', 'gymnastics', 'snowboarding', 'skateboarding',
     ],
   },
+  movies: {
+    label: 'Movies',
+    words: [
+      'elf', 'her', 'jaws', 'cars', 'coco', 'dune', 'alien', 'rocky', 'shrek', 'bambi', 'moana', 'fargo', 'rambo',
+      'frozen', 'avatar', 'barbie', 'psycho', 'titanic', 'gravity', 'aladdin', 'jumanji', 'vertigo', 'amadeus', 'memento', 'skyfall', 'encanto',
+      'parasite', 'whiplash', 'zootopia', 'deadpool', 'godzilla',
+      'inception', 'gladiator', 'pinocchio', 'casablanca', 'braveheart', 'terminator', 'goodfellas', 'cinderella', 'ratatouille', 'interstellar', 'oppenheimer', 'ghostbusters',
+    ],
+  },
 };
